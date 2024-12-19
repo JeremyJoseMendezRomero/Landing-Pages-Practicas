@@ -1,5 +1,5 @@
 /*CSS Reset*/
-*{margin: 0; padding: 0; outline: 1px solid tomato;}
+*{margin: 0; padding: 0;}
 *::before, *::after{box-sizing: border-box;}
 body{min-height: 100dvh;}
 input, button, textarea, select{font: inherit;}
@@ -17,3 +17,158 @@ img, video, svg{height: auto; max-width: 100%;}
     }
 }
 /*FIN - CSS Reset*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.montserrat-ExtraBold {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.montserrat-bold {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.montserrat-light {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    background: #080C15;
+}
+
+main{
+    width: 100%;
+
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        width: 85%;
+        margin: 0 auto;
+        padding: 110px 0 0;
+
+        article{
+            flex-grow: 1;
+
+            &.info{
+                width: 47%;
+                display: flex;
+                flex-direction: column;
+
+                section{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 45px;
+                }
+
+                h1{
+                    color: white;
+                    font: 900 64px/78.02px "Montserrat", serif;
+
+                    span{
+                        color: #CD292A;
+                    }
+                }
+
+                p{
+                    color: white;
+                    font: 400 24px/34px "Montserrat", serif;
+                }
+
+                picture{
+                    display: flex;
+
+                    img{
+                        margin: 0 0 0 -5%;
+
+                        &:nth-child(1){
+                            margin: 0;
+                        }
+                    }
+                }
+
+                button{
+                    background: #CD292A;
+                    border: 0;
+                    color: white;
+                    padding: 24px 40px;
+                    border-radius: 40px;
+                    width: max-content;
+                    font: 400 16px "Montserrat", serif;
+                    cursor: pointer;
+                }
+            }
+
+            &.banner{
+                display: flex;
+                width: 53%;
+
+                section{
+                    width: 100%;
+                    
+                    picture{
+                        display: flex;
+                        position: relative;
+
+                        img{
+                            position: absolute;
+                            max-width: 60em;
+                            width: 60em;
+                            top: -170px;
+                            left: -140px;
+                            filter: drop-shadow(0 0 0.1rem rgb(0, 0, 0));
+                            z-index: 2;
+                        }
+
+                        &::after{
+                            position: absolute;
+                            content: '';
+                            display: block;
+                            width: 244px;
+                            height: 240px;
+                            border-radius: 50%;
+                            background: #FFF;
+                            filter: blur(30px);
+                            box-shadow: 0 0 135px 145px #8da2c8;
+                            top: 220px;
+                            left: 260px;
+                            z-index: 1;
+                        }
+                    }
+                }
+            }
+
+            &:nth-child(3){
+                flex-grow: 2;
+                margin: 50px 0 0 0;
+
+                section{
+                    display: flex;
+                    justify-content: space-between;
+
+                    div{
+                        background: linear-gradient(90deg, rgba(255,255,255,0.4), rgba(255,255,255,0));
+                        backdrop-filter: blur(3px);
+                        padding: 36px;
+                        border-radius: 50px 0 0 50px;
+                        z-index: 3;
+                        width: 26%;
+
+                        h3{
+                            font: 600 24px/29.26px "Montserrat", serif;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
