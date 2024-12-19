@@ -1,5 +1,5 @@
 /*CSS Reset*/
-*{margin: 0; padding: 0; outline: 1px solid tomato;}
+*{margin: 0; padding: 0;}
 *::before, *::after{box-sizing: border-box;}
 body{min-height: 100dvh;}
 input, button, textarea, select{font: inherit;}
@@ -17,3 +17,80 @@ img, video, svg{height: auto; max-width: 100%;}
     }
 }
 /*FIN - CSS Reset*/
+
+@font-face {
+    font-family: 'Avenir-Black';
+    font-weight: 800;
+    src: url("fonts/AvenirLTStd-Black.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Avenir-Light';
+    font-weight: 400;
+    src: url("fonts/AvenirLTStd-Light.otf") format("opentype");
+}
+
+main{
+    width: 100%;
+
+    .container{
+        width: 95%;
+        margin: 0 auto;
+
+        .top{
+            display: flex;
+            margin: 65px 0 65px;
+
+            section{
+                display: inherit;
+                flex-grow: 1;
+
+                &:nth-child(2){
+                    display: flex;
+                    flex-direction: column;
+                    flex-grow: 1;
+                    flex-basis: 25%;
+                }
+
+                h1{
+                    font: 800 88px/80px 'Avenir-Black';
+                    color: #252525;
+                }
+
+                p{
+                    font: 400 26px/35.52px 'Avenir-Light';
+                    margin: 0 0 20px;
+                    width: 85%;
+                    color: #252525;
+                }
+
+                button{
+                    display: block;
+                    width: max-content;
+                    background: #252525;
+                    border: 0;
+                    border-radius: 16px;
+                    color: white;
+                    padding: 16px 32px;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .bottom{
+            margin: 0 0 65px;
+
+            section{
+
+                picture{
+                    display: flex;
+
+                    img{
+                        width: 100%;
+                        aspect-ratio: 4/4;
+                    }
+                }
+            }
+        }
+    }
+}
