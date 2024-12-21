@@ -1,5 +1,5 @@
 /*CSS Reset*/
-*{margin: 0; padding: 0; outline: 1px solid tomato;}
+*{margin: 0; padding: 0;}
 *::before, *::after{box-sizing: border-box;}
 body{min-height: 100dvh;}
 input, button, textarea, select{font: inherit;}
@@ -17,3 +17,93 @@ img, video, svg{height: auto; max-width: 100%;}
     }
 }
 /*FIN - CSS Reset*/
+
+@font-face {
+    font-family: 'Avenir-Black';
+    font-weight: 800;
+    src: url("fonts/AvenirLTStd-Black.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Avenir-Light';
+    font-weight: 400;
+    src: url("fonts/AvenirLTStd-Light.otf") format("opentype");
+}
+
+body{
+    display: flex;
+    padding: 65px 0 0;
+
+    h1, h3{
+        font: 800 64px/80px 'Avenir-Black';
+        text-wrap: unset;
+        color: #252525;
+    }
+
+    p{
+        font: 400 26px/35.52px 'Avenir-Light';
+        color: #252525;
+        text-wrap: auto;
+    }
+
+    aside{
+        width: 46%;
+
+        picture{
+            display: flex;
+
+            img{
+                width: inherit;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    main{
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        gap: 6em;
+
+        article{
+            display: flex;
+            flex-direction: column;
+            gap: 2.5em;
+
+            &:nth-child(1) section:not(:nth-child(2)){
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 2em;
+
+                p{
+                    width: 90%;
+                }
+            }
+
+            section{
+
+                h3{
+                    font-size: 32px;
+                    line-height: 43.71px;
+                    color: rgba(37, 37, 37, .5);
+                }
+
+                button{
+                    background: #252525;
+                    color: white;
+                    border: 0;
+                    border-radius: 16px;
+                    padding: 18px 48px;
+                    font: 400 16px 'Avenir-Light';
+                    display: block;
+                    width: max-content;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+}
