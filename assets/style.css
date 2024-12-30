@@ -1,5 +1,5 @@
 /*CSS Reset*/
-*{margin: 0; padding: 0; outline: 1px solid tomato;}
+*{margin: 0; padding: 0;}
 *::before, *::after{box-sizing: border-box;}
 body{min-height: 100dvh;}
 input, button, textarea, select{font: inherit;}
@@ -17,3 +17,93 @@ img, video, svg{height: auto; max-width: 100%;}
     }
 }
 /*FIN - CSS Reset*/
+
+@font-face {
+    font-family: Avenir;
+    font-weight: 800;
+    src: url("fonts/AvenirLTStd-Black.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Avenir;
+    font-weight: 400;
+    src: url("fonts/AvenirLTStd-Light.otf") format("opentype");
+}
+
+main{
+    padding: 0 5%;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr; /* shorthand: repeat(3, 1fr) - primer valor representa la cantidad de columnas y el segundo la medida*/
+    grid-template-rows: 0.6fr 1fr;
+    grid-template-areas: 
+        "title title title"
+        "articles articles articles";
+    ;
+
+    .row_1{
+        align-self: center; 
+        grid-area: title; 
+        height: max-content;
+
+        h1{
+            font: 800 88px/104px Avenir;
+            width: 50%;
+            text-wrap: auto;
+            color: rgb(37, 37, 37);
+        }
+    }
+
+    .row_2{
+        padding: 0 6px;
+        display: grid;
+        grid-area: articles;
+
+        article{
+            justify-self: center;
+            display: grid;
+
+            figure{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                width: 85%;
+
+                h3{
+                    font: 800 32px/43px Avenir;
+                    color: rgba(37, 37, 37, 0.55);
+                }
+                p{
+                    font: 400 24px/32px Avenir;
+                    text-wrap: balance;
+                    color: rgba(37, 37, 37, 0.8);
+                }
+                img{
+                    aspect-ratio: 4/4;
+                    width: 99.4%;
+                    height: 95%;
+                }
+            }
+        }
+
+        .article_1{
+            justify-self: start;
+            grid-column: 1 / 2;
+        }
+        .article_2{
+            grid-column: 2 / 3;
+
+            figure{
+                justify-self: center;
+            }
+        }
+        .article_3{
+            grid-column: 3 / 4;
+            justify-self: end;
+
+            figure{
+                justify-self: end;
+            }
+        }
+    }
+}
